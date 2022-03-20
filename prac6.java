@@ -3,13 +3,27 @@ import java.util.Scanner;
 public class prac6 {
     public static void main(String[] args) {
         Scanner object = new Scanner(System.in);
-        Character input = object.next().charAt(0);
+        String input = object.nextLine();
         
-        if(input == 'a' || input == 'e' || input == 'i' || input == 'o' || input == 'u'){
-            System.out.println("vowel");
-        }
-        else{
-            System.out.println("consonant");
+        switch (input) {
+            case "a":
+                System.out.println("vowel");
+                break;
+            case "e":
+                System.out.println("vowel");
+                break;
+            case "i":
+                System.out.println("vowel");
+                break;
+            case "o":
+                System.out.println("vowel");
+                break;
+            case "u":
+                System.out.println("vowel");
+                break;
+            default:
+                System.out.println("consonant");
+                break;
         }
     }
 }
