@@ -16,7 +16,7 @@ public class prac5 {
         if (b != abs_max && b != abs_min){ mid = b;}
         if (c != abs_max && c != abs_min){ mid = c;}
 
-        System.out.printf("sorted : %d %d %d",abs_max,mid,abs_min);
+        System.out.printf("sorted : %d %d %d\n",abs_max,mid,abs_min);
 
     }
 }
