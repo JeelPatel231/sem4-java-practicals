@@ -8,15 +8,15 @@ public class prac5 {
         int b = object.nextInt();
         int c = object.nextInt();
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(a);
-        list.add(b);
-        list.add(c);
+        int abs_max = Math.max(a, Math.max(b, c));
+        int abs_min = Math.min(a, Math.min(b, c));
+        int mid = 0;
 
-        Collections.sort(list);
-        Collections.reverse(list);
+        if (a != abs_max && a != abs_min){ mid = a;}
+        if (b != abs_max && b != abs_min){ mid = b;}
+        if (c != abs_max && c != abs_min){ mid = c;}
 
-        System.out.println("sorted = "+list);
+        System.out.printf("sorted : %d %d %d",abs_max,mid,abs_min);
 
     }
 }
