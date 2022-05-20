@@ -13,7 +13,7 @@ public class co4q2 {
         while (myReader.hasNextLine()) {
             line = myReader.nextLine();
             characterCount += line.length();
-            lineCount += line.split("\n").length;
+            lineCount++;
         }
         System.out.println("Total number of characters = "+ characterCount);
         System.out.println("Total number of lines = "+ lineCount);
