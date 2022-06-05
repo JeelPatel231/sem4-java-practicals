@@ -1,19 +1,24 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class prac5 {
+    public static void primeFactors(int n){
+        while (n%2==0){
+            System.out.print(2 + " ");
+            n /= 2;
+        }
+ 
+        for (int i = 3; i <= Math.sqrt(n); i+= 2){
+            while (n%i == 0){
+                System.out.print(i + " ");
+                n /= i;
+            }
+        }
+        
+        if (n > 2) System.out.println(n);
+    }
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
-        
-        int a[] = new int[3];
-        a[0] = scr.nextInt();
-        a[1] = scr.nextInt();
-        a[2] = scr.nextInt();
- 
-        Arrays.sort(a);
- 
-        System.out.printf("%d %d %d\n",a[0],a[1],a[2]);
-
+        primeFactors(scr.nextInt());
         scr.close();
-
     }
 }

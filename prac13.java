@@ -1,3 +1,4 @@
+//  HALF IMPLEMENTATION
 public class prac13 {
     public static void main(String[] args) {
 
@@ -7,12 +8,12 @@ public class prac13 {
             sanitisedString += args[i];
         }
 
-        if(sanitisedString.length() < 3){
-            System.out.println("Malformed Expression, exiting!");
-            return;
-        }
+        String[] arrayOfOperands = sanitisedString.split("[+-/x]");
+        String[] arrayOfOperators = sanitisedString.split("\\d+");
 
-        System.out.print(sanitisedString+" = ");
+        System.out.println(arrayOfOperators[0]);
+
+        System.out.print(sanitisedString+"=");
 
         int oper1 = sanitisedString.charAt(0) - '0';
         int oper2 = sanitisedString.charAt(2) - '0';

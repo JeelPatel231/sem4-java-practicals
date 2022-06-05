@@ -1,24 +1,20 @@
-abstract class Operations{
-    abstract float addition(float a, float b);
-
-    float subtraction(float a, float b){
-        return a - b;
-    }
-
-}
-
-class ImplementedMethod extends Operations{
-    @Override
-    float addition(float a, float b) {
-        return a + b;
-    }
-
-}
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
 
 public class prac17 {
-    public static void main(String[] args) {
-        ImplementedMethod k = new ImplementedMethod();
-        System.out.println( k.addition(8, 9) );
-        System.out.println( k.subtraction(4, 9) );
+  public static void main(String[] args) {
+    Random random = new Random(1000);
+    try {
+      FileWriter myWriter = new FileWriter("123.txt");
+      for (int i = 0; i < 100; i++){
+          myWriter.write(random.nextInt(100)+" ");
+      }
+      myWriter.close();
+      System.out.println("Successfully wrote to the file.");
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
     }
+  }
 }

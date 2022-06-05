@@ -1,14 +1,23 @@
-class CustomException extends Exception{
-    public CustomException(String e){
-        super(e);
-    }
-}
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class prac19 {
-    public static void main(String[] args) throws CustomException {
-        for(int i = 0; i < args.length; i++){
-            if(Integer.parseInt(args[i]) < 0){
-                throw new CustomException("negative number in command line arguments");
-            }
-        }
+    public static void main(String[] args) {
+        LinkedList<String> ll = new LinkedList<String>();
+        ll.add("String1");
+        ll.add("String2");
+        ll.add("String3");
+        ll.add("String4");
+        ll.add("String5");
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Search for an element : ");
+        String var = scn.nextLine();
+
+        System.out.println(
+            ll.contains(var)
+        );
+
+        scn.close();
     }
 }

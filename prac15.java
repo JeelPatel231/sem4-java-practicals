@@ -1,31 +1,27 @@
-import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class prac15 {
-    static int bin2dec(String str){
-        int answer = 0;
-        int len = str.length()-1;
+    private static Integer sum = 0;
 
-        // scan the string from right to left
-        for(int i = len; i >= 0; i--){
-        
-            // if character is 1, calculate using power and add it to the answer
-            if(str.charAt(i) == '1'){
-                answer += Math.pow(2, len-i);
-                continue;
-            }
-        
-            // if character is 0, ignore
-            if(str.charAt(i) == '0') continue;
-
-            // if anything else, throw NumberFormatException
-            throw new NumberFormatException("String is not a valid Binary string");
-        }
-        return answer;
-    }
     public static void main(String[] args) {
-        System.out.print("Enter your binary string : ");
-        Scanner s = new Scanner(System.in);
-        System.out.println(bin2dec(s.nextLine()));
-        s.close(); 
-    } 
+        ExecutorService executor = Executors.newCachedThreadPool();
+
+        for (int i = 0; i < 1000; i++) {
+            executor.execute(new AddOne());
+        }
+
+        executor.shutdown();
+
+        while (!executor.isTerminated()) {
+        }
+
+        System.out.println("sum = " + sum);
+    }
+
+    private static class AddOne implements Runnable {
+        public void run() {
+            sum++;
+        }
+    }
 }
